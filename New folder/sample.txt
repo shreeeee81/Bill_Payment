@@ -1,0 +1,13 @@
+update employee modify emp_id int(10) primary key;
+alter table employee add primary key(emp_id);
+
+----Self join---
+select studentid, name from Student S1, Student S2 where S1.studentid=S2.studentid;
+
+Select * from students s RIGHT JOIN ON Department d where s.stdid=d.stdid;
+
+----Linux----
+grep linux file.txt
+head file.txt
+man
+ping www.google.com

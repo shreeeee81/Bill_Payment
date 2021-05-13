@@ -1,0 +1,341 @@
++------------------------+
+| Tables_in_bill_payment |
++------------------------+
+| admin_details          |
+| customers_details      |
+| vendors_details        |
+| credit_details         |
+| upi_details            |
+| dth_bills              |
+| telephone_bills        |
+| electric_bills         |
+| records_bills          |
+| feedback	         |
+| help                   |
++------------------------+
+
+In admin_details
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| username | varchar(255) | NO   | PRI | NULL    |       |
+| password | varchar(255) | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+
+In Customer_details
++----------------------+--------------+------+-----+---------+----------------+
+| Field                | Type         | Null | Key | Default | Extra          |
++----------------------+--------------+------+-----+---------+----------------+
+| id                   | int(11)      | NO   | PRI | NULL    | auto_increment |
+| firstname            | varchar(255) | YES  |     | NULL    |                |
+| lastname             | varchar(255) | YES  |     | NULL    |                |
+| gender               | varchar(255) | YES  |     | NULL    |                |
+| mobile               | varchar(255) | YES  |     | NULL    |                |
+| email                | varchar(255) | YES  | UNI | NULL    |                |
+| address              | varchar(255) | YES  |     | NULL    |                |
+| state                | varchar(255) | YES  |     | NULL    |                |
+| country              | varchar(255) | YES  |     | NULL    |                |
+| username             | varchar(255) | YES  | UNI | NULL    |                |
+| password             | varchar(255) | YES  |     | NULL    |                |
+| confirmationpassword | varchar(255) | YES  |     | NULL    |                |
+| secretquestion       | varchar(255) | YES  |     | NULL    |                |
+| answer               | varchar(255) | YES  |     | NULL    |                |
++----------------------+--------------+------+-----+---------+----------------+
+
+In vendor_details
++----------------------+--------------+------+-----+---------+----------------+
+| Field                | Type         | Null | Key | Default | Extra          |
++----------------------+--------------+------+-----+---------+----------------+
+| id                   | int(11)      | NO   | PRI | NULL    | auto_increment |
+| vendorname           | varchar(255) | YES  | UNI | NULL    |                |
+| mobile               | varchar(255) | YES  |     | NULL    |                |
+| address              | varchar(255) | YES  |     | NULL    |                |
+| state                | varchar(255) | YES  |     | NULL    |                |
+| country              | varchar(255) | YES  |     | NULL    |                |
+| username             | varchar(255) | YES  | UNI | NULL    |                |
+| password             | varchar(255) | YES  | UNI | NULL    |                |
+| confirmationpassword | varchar(255) | YES  |     | NULL    |                |
+| secretquestion       | varchar(255) | YES  |     | NULL    |                |
+| answer               | varchar(255) | YES  |     | NULL    |                |
+| status               | varchar(255) | YES  |     | NULL    |                |
++----------------------+--------------+------+-----+---------+----------------+
+
+In credit_details 
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| cardnumber | varchar(255) | NO   | PRI | NULL    |       |
+| cvv        | varchar(255) | YES  |     | NULL    |       |
+| expdate    | varchar(255) | YES  |     | NULL    |       |
+| name       | varchar(255) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+
+In upi_details
++----------------+--------------+------+-----+---------+-------+
+| Field          | Type         | Null | Key | Default | Extra |
++----------------+--------------+------+-----+---------+-------+
+| contact_number | varchar(255) | NO   | PRI | NULL    |       |
+| password       | varchar(255) | YES  |     | NULL    |       |
+| upi            | varchar(255) | YES  |     | NULL    |       |
++----------------+--------------+------+-----+---------+-------+
+
+In dth_bills
++-------------------+--------------+------+-----+---------+----------------+
+| Field             | Type         | Null | Key | Default | Extra          |
++-------------------+--------------+------+-----+---------+----------------+
+| id                | int(11)      | NO   | PRI | NULL    | auto_increment |
+| amount            | varchar(255) | YES  |     | NULL    |                |
+| billpaydate       | datetime(6)  | YES  |     | NULL    |                |
+| dthname           | varchar(255) | YES  |     | NULL    |                |
+| rmn               | varchar(255) | YES  |     | NULL    |                |
+| servicenumber     | varchar(255) | YES  |     | NULL    |                |
+| transactionstatus | varchar(255) | YES  |     | NULL    |                |
+| customer_id       | int(11)      | YES  | MUL | NULL    |                |
++-------------------+--------------+------+-----+---------+----------------+
+
+In electric_bills
++-------------------+--------------+------+-----+---------+----------------+
+| Field             | Type         | Null | Key | Default | Extra          |
++-------------------+--------------+------+-----+---------+----------------+
+| id                | int(11)      | NO   | PRI | NULL    | auto_increment |
+| amount            | varchar(255) | YES  |     | NULL    |                |
+| billnumber        | varchar(255) | YES  | UNI | NULL    |                |
+| billpaydate       | datetime(6)  | YES  |     | NULL    |                |
+| board             | varchar(255) | YES  |     | NULL    |                |
+| servicenumber     | varchar(255) | YES  |     | NULL    |                |
+| state             | varchar(255) | YES  |     | NULL    |                |
+| transactionstatus | varchar(255) | YES  |     | NULL    |                |
+| customer_id       | int(11)      | YES  | MUL | NULL    |                |
++-------------------+--------------+------+-----+---------+----------------+
+
+In telephone_bills 
++-------------------+--------------+------+-----+---------+----------------+
+| Field             | Type         | Null | Key | Default | Extra          |
++-------------------+--------------+------+-----+---------+----------------+
+| id                | int(11)      | NO   | PRI | NULL    | auto_increment |
+| amount            | varchar(255) | YES  |     | NULL    |                |
+| billpaydate       | datetime(6)  | YES  |     | NULL    |                |
+| state             | varchar(255) | YES  |     | NULL    |                |
+| telephonenumber   | varchar(255) | YES  |     | NULL    |                |
+| transactionstatus | varchar(255) | YES  |     | NULL    |                |
+| customer_id       | int(11)      | YES  | MUL | NULL    |                |
++-------------------+--------------+------+-----+---------+----------------+
+
+In records_bills
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| id           | int(11)      | NO   | PRI | NULL    | auto_increment |
+| billamount   | varchar(255) | YES  |     | NULL    |                |
+| billname     | varchar(255) | YES  |     | NULL    |                |
+| billnumber   | varchar(255) | YES  |     | NULL    |                |
+| billpaiddate | date         | YES  |     | NULL    |                |
+| customer_id  | int(11)      | YES  | MUL | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+
+In Feedback
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| feedbackid | int(11)      | NO   | PRI | NULL    | auto_increment |
+| username   | varchar(255) | YES  |     | NULL    |                |
+| ans1       | varchar(255) | YES  |     | NULL    |                |
+| ans2       | varchar(255) | YES  |     | NULL    |                |
+| ans3       | varchar(255) | YES  |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+
+In help
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| serialno    | int(11)      | NO   | PRI | NULL    | auto_increment |
+| username    | varchar(255) | YES  |     | NULL    |                |
+| description | varchar(255) | YES  |     | NULL    |                |
+| issue       | varchar(255) | YES  |     | NULL    |                |
+| status      | varchar(255) | YES  |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+
+
+
+Tables Creation 
+----------------------------------------------------------------------
+DROP TABLE IF EXISTS `customers_details`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `customers_details` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `address` varchar(255) DEFAULT NULL,
+  `answer` varchar(255) DEFAULT NULL,
+  `confirmationpassword` varchar(255) DEFAULT NULL,
+  `country` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `firstname` varchar(255) DEFAULT NULL,
+  `gender` varchar(255) DEFAULT NULL,
+  `lastname` varchar(255) DEFAULT NULL,
+  `mobile` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `secretquestion` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+   PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_rukn2kdduicmeop3s48esrnfk` (`email`),
+  UNIQUE KEY `UK_576v40a3yecfdk68dxlyn8y99` (`username`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+---------------------------------------------------------------------------------------
+DROP TABLE IF EXISTS `vendors_details`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `vendors_details` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `address` varchar(255) DEFAULT NULL,
+  `answer` varchar(255) DEFAULT NULL,
+  `vendorname` varchar(255) DEFAULT NULL,
+  `confirmationpassword` varchar(255) DEFAULT NULL,
+  `country` varchar(255) DEFAULT NULL,
+  `mobile` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `secretquestion` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+   PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_hmpfxa5pw78pu9ai2pj17spcn` (`vendorname`),
+  UNIQUE KEY `UK_a7fe3kkutojcryyo9v4dadchx` (`password`),
+  UNIQUE KEY `UK_t4sm41g5g1u1fmv77ry2at3ld` (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+---------------------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `credit_details`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `credit_details` (
+  `cardnumber` varchar(255) NOT NULL,
+  `cvv` varchar(255) DEFAULT NULL,
+  `expdate` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`cardnumber`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+---------------------------------------------------------------------------------------
+DROP TABLE IF EXISTS `admin_details`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `admin_details` (
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+---------------------------------------------------------------------------------------
+DROP TABLE IF EXISTS `dth_bills`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `dth_bills` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `amount` varchar(255) DEFAULT NULL,
+  `billpaydate` datetime(6) DEFAULT NULL,
+  `dthname` varchar(255) DEFAULT NULL,
+  `rmn` varchar(255) DEFAULT NULL,
+  `servicenumber` varchar(255) DEFAULT NULL,
+  `transactionstatus` varchar(255) DEFAULT NULL,
+  `customer_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKl0s0bqdle2y41k68schaykh0h` (`customer_id`),
+  CONSTRAINT `FKl0s0bqdle2y41k68schaykh0h` FOREIGN KEY (`customer_id`) REFERENCES `customers_details` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+---------------------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `electric_bills`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `electric_bills` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `amount` varchar(255) DEFAULT NULL,
+  `billnumber` varchar(255) DEFAULT NULL,
+  `billpaydate` datetime(6) DEFAULT NULL,
+  `board` varchar(255) DEFAULT NULL,
+  `servicenumber` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
+  `transactionstatus` varchar(255) DEFAULT NULL,
+  `customer_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_li03w7l8ystx0uhy74i4wah9i` (`billnumber`),
+  KEY `FKn1hkh51bi8n8ih3wr5y3a1et8` (`customer_id`),
+  CONSTRAINT `FKn1hkh51bi8n8ih3wr5y3a1et8` FOREIGN KEY (`customer_id`) REFERENCES `customers_details` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+---------------------------------------------------------------------------------------
+DROP TABLE IF EXISTS `upi_details`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `upi_details` (
+  `contact_number` varchar(255) NOT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `upi` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`contact_number`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+---------------------------------------------------------------------------------------
+DROP TABLE IF EXISTS `records_bills`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `records_bills` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `billamount` varchar(255) DEFAULT NULL,
+  `billname` varchar(255) DEFAULT NULL,
+  `billnumber` varchar(255) DEFAULT NULL,
+  `billpaiddate` date DEFAULT NULL,
+  `customer_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK8xxkcecl7nfavitfoqkkqd1dl` (`customer_id`),
+  CONSTRAINT `FK8xxkcecl7nfavitfoqkkqd1dl` FOREIGN KEY (`customer_id`) REFERENCES `customers_details` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+---------------------------------------------------------------------------------------
+DROP TABLE IF EXISTS `telephone_bills`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `telephone_bills` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `amount` varchar(255) DEFAULT NULL,
+  `billpaydate` datetime(6) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
+  `telephonenumber` varchar(255) DEFAULT NULL,
+  `transactionstatus` varchar(255) DEFAULT NULL,
+  `customer_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKt06rxexe8gesuq99gmm9feo2c` (`customer_id`),
+  CONSTRAINT `FKt06rxexe8gesuq99gmm9feo2c` FOREIGN KEY (`customer_id`) REFERENCES `customers_details` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+---------------------------------------------------------------------------------------
+DROP TABLE IF EXISTS `feedback`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `feedback` (
+  `feedbackid` int(11) NOT NULL AUTO_INCREMENT,
+  `ans1` varchar(255) DEFAULT NULL,
+  `ans2` varchar(255) DEFAULT NULL,
+  `ans3` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`feedbackid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+---------------------------------------------------------------------------------------
+DROP TABLE IF EXISTS `help`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `help` (
+  `serialno` int(11) NOT NULL AUTO_INCREMENT,
+  `description` varchar(255) DEFAULT NULL,
+  `issue` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`serialno`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+---------------------------------------------------------------------------------------

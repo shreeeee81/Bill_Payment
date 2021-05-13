@@ -1,0 +1,24 @@
+html,body{
+	height: 100%;
+    margin: 0;
+}
+.bg{
+	background-image:url("27Z_2102.w003.n001.97B.p12.97.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat:no-repeat;
+	height: 100%;
+	
+}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: grey;
+   color: white;
+   text-align: center;
+   height:100px;
+  
+   
+}

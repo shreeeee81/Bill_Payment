@@ -1,0 +1,11 @@
+userstory 1 & 2 
+Frontend: Saurav bhargav
+Backend: Apporva tejas shreehari
+
+userstory 3 & 4
+Frontend: Apporva Shreehari
+Backend: Bhargav Saurav Tejas
+
+Userstory 5
+Frontend: Tejas Bhargav
+backend: Apporva Saurav Shreehari

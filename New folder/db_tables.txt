@@ -1,0 +1,106 @@
+CREATE TABLE `customers_details` (
+  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `firstname` varchar(255),
+  `lastname` varchar(255),
+  `gender` varchar(255),
+  `mobile` int(10), 
+  `email` varchar(255),
+  `address` varchar(255),
+  `username` varchar(255),
+  `password` varchar(255),
+ );
+
+CREATE TABLE `admin_details` (
+  `username` varchar(255) PRIMARY KEY NOT NULL,
+  `password` varchar(255),
+ ); 
+
+CREATE TABLE `vendors_details` (
+  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `vendorname` varchar(255),
+  `mobile` varchar(255),
+  `address` varchar(255),
+  `maplocation` varchar(255),
+  `username` varchar(255),
+  `password` varchar(255),
+  `status` varchar(255),
+);
+
+CREATE TABLE `credit_details` (
+  `cardnumber` varchar(255) PRIMARY KEY NOT NULL,
+  `cvv` varchar(255) DEFAULT NULL,
+  `expdate` varchar(255),
+  `name` varchar(255),
+);
+
+CREATE TABLE `upi_details` (
+  `contact_number` varchar(255) PRIMARY KEY NOT NULL,
+  `password` varchar(255),
+  `upi` varchar(255),
+);
+
+CREATE TABLE `dth_bills` (
+  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `amount` varchar(255),
+  `billpaydate` datetime(6),
+  `dthname` varchar(255),
+  `rmn` varchar(255),
+  `servicenumber` varchar(255),
+  `transactionstatus` varchar(255),
+  `customer_id` int(11),
+);
+
+CREATE TABLE `electric_bills` (
+  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `amount` varchar(255),
+  `billnumber` varchar(255),
+  `billpaydate` datetime(6),
+  `board` varchar(255),
+  `servicenumber` varchar(255),
+  `state` varchar(255),
+  `transactionstatus` varchar(255),
+  `customer_id` int(11),
+);
+
+CREATE TABLE `telephone_bills` (
+  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `amount` varchar(255),
+  `billpaydate` datetime,
+  `state` varchar(255),
+  `telephonenumber` varchar(255),
+  `transactionstatus` varchar(255),
+  `customer_id` int(11),
+);
+
+CREATE TABLE `records_bills` (
+  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `billamount` varchar(255),
+  `billname` varchar(255),
+  `billnumber` varchar(255),
+  `billpaiddate` date,
+  `customer_id` int(11),
+);
+
+CREATE TABLE `cust_feedback` (
+  `feedbackid` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `ans1` varchar(255),
+  `ans2` varchar(255),
+  `ans3` varchar(255),
+  `customer_id` varchar(255),
+);
+
+CREATE TABLE `vendor_feedback` (
+  `feedbackid` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `ans1` varchar(255),
+  `ans2` varchar(255),
+  `ans3` varchar(255),
+  `vendor_id` varchar(255),
+);
+
+CREATE TABLE `help` (
+  `serialno` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `description` varchar(255),
+  `issue` varchar(255),
+  `status` varchar(255),
+  `username` varchar(255),
+);
